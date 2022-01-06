@@ -1,0 +1,17 @@
+class Solution{   
+public:
+    vector<int> printKClosest(vector<int> arr, int n, int k, int x) {
+        // code here
+        proirity_queue<pair<int,int>>m;
+        for(int i=0;i<n;i++){
+            m.push({abs(arr[i]-x),arr[i]});
+            if(m.size()>k)
+                m.pop();
+        }
+        while(m.size()>0){
+            cout<<m.top().second<<" ";
+            m.pop();
+        }
+        
+    }
+};
