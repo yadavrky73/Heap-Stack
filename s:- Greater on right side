@@ -1,0 +1,22 @@
+class Solution:
+
+    def nextGreatest(self,arr, n):
+        # code  here
+        mx=arr[n-1]
+        arr[n-1]=-1
+        for i in range (n-2,-1,-1):
+            t=arr[i]
+            arr[i]=mx
+            if t > mx:
+                mx=t
+if __name__ == '__main__':
+    tc = int(input())
+    while tc > 0:
+        n = int(input())
+        arr = list(map(int, input().strip().split()))
+        ob = Solution()
+        ob.nextGreatest(arr, n)
+        for x in arr:
+            print(x, end=" ")
+        print()
+        tc -= 1
